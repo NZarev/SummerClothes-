@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class SummerClothes {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int temperature = scanner.nextInt();
+        String timeOfDay = scanner.next();
+
+        String outfit = "";
+        String shoes = "";
+
+        if (temperature >= 10 && temperature <= 18) {
+            if (timeOfDay.equals("Morning")) {
+                outfit = "Sweatshirt";
+                shoes = "Sneakers";
+            } else if (timeOfDay.equals("Afternoon") || timeOfDay.equals("Evening")) {
+                outfit = "Shirt";
+                shoes = "Moccasins";
+            }
+        } else if (temperature > 18 && temperature <= 24) {
+            if (timeOfDay.equals("Morning") || timeOfDay.equals("Evening")) {
+                outfit = "Shirt";
+                shoes = "Moccasins";
+            } else if (timeOfDay.equals("Afternoon")) {
+                outfit = "T-Shirt";
+                shoes = "Sandals";
+            }
+        } else if (temperature >= 25) {
+            if (timeOfDay.equals("Morning")) {
+                outfit = "T-Shirt";
+                shoes = "Sandals";
+            } else if (timeOfDay.equals("Afternoon")) {
+                outfit = "Swim Suit";
+                shoes = "Barefoot";
+            } else if (timeOfDay.equals("Evening")) {
+                outfit = "Shirt";
+                shoes = "Moccasins";
+            }
+        }
+
+        System.out.printf("It's %d degrees, get your %s and %s.%n", temperature, outfit, shoes);
+
+        scanner.close();
+    }
+}
